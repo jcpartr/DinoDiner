@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="DinoDiner.PointOfSale.MenuControls.VelociWraptorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DinoDiner.PointOfSale.MenuControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="648" d:DesignWidth="810">
+    <UserControl.Resources>
+        <Style TargetType="Viewbox">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Viewbox Grid.Row="0">
+            <ContentControl FontWeight="Bold">Veloci-Wraptor</ContentControl>
+        </Viewbox>
+
+        <Viewbox Grid.Row="2">
+            <CheckBox Name="DressingCheckBox" IsChecked="{Binding Path=Dressing}">Dressing</CheckBox>
+        </Viewbox>
+
+        <Viewbox Grid.Row="3">
+            <CheckBox Name="CheeseCheckBox" IsChecked="{Binding Path=Cheese}">Cheese</CheckBox>
+        </Viewbox>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal" VerticalAlignment="Bottom">
+            <TextBlock FontSize="25" Margin="0 0 10 0">Calories:</TextBlock>
+            <TextBlock Name="CaloriesTextBox" FontSize="25" Text="{Binding Path=Calories}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="DinoDiner.PointOfSale.MenuControls.BurgerPattiesControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DinoDiner.PointOfSale.MenuControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="810">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Viewbox Height="40">
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock FontSize="25" Margin="0 0 10 0">Patties:</TextBlock>
+                <TextBlock Name="PattiesTextBox" FontSize="25" Text="{Binding Path=Patties}"/>
+            </StackPanel>
+        </Viewbox>
+        <Button Name="IncreasePattiesButton" Grid.Column="1">+</Button>
+        <Button Grid.Column="2" Name="DecreasePattiesButton">-</Button>
+    </Grid>
+</UserControl>

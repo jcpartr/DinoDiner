@@ -1,0 +1,107 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    background-color: #9fc69c;
+    font-family: 'Comic Sans MS';
+    color: white;
+}
+
+.menu-itemcategory-container {
+    width: 90%;
+    height: 90%;
+    overflow: auto;
+    margin-bottom: 60px;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.menu-item-container {
+    display: inline-table;
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.horizontal-line {
+    margin: 0 0 0 0;
+}
+
+.scroll-helper {
+    z-index: 9;
+    margin-top: 60px;
+}
+
+.drinks-container {
+    display: flex;
+}
+
+#primary {
+    background-color: #8a538f;
+    color: white;
+}
+
+#secondary {
+    background-color: #588f53;
+    color: white;
+}
+
+#tertiary {
+    background-color: #9fc69c;
+    color: white;
+}
+
+.search-criteria-container {
+    display: block;
+}
+
+.search-terms-container {
+
+}
+
+.search-filters-container {
+    display: inline-flex;
+}
+
+.search-types-container {
+    display: block;
+}
+
+.search-prices-container {
+
+}
+
+.search-calories-container {
+
+}
+
+.search-filter {
+    margin: 8px;
+}
+
+.page-title {
+    margin: 16px;
+}
+
+.number-input {
+    max-width: 80px;
+}
+
+.search-terms-input {
+    width: 50%;
+}

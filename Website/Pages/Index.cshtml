@@ -1,0 +1,163 @@
+﻿@page
+@model IndexModel
+@using DinoDiner.Data;
+@using DinoDiner.Data.Enums;
+@using System.Text;
+@using System;
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div id="tertiary">
+
+
+    <div class="text-center page-title">
+        <!--Welcome Message-->
+        <h1>Dino Diner</h1>
+        <div>Satisfying dino-sized appetites!</div>
+    </div>
+
+    <form>
+        <div class="search-criteria-container text-center">
+            <!--Search Criteria-->
+            <div class = "search-terms-container" id="text-search">
+                <input type="text" name="SearchTerms" value="@Model.SearchTerms" class="search-terms-input" placeholder="Enter Search Terms Here"/>
+                <input type="submit" value="Search">
+            </div>
+    
+            <div class="search-filters-container"> 
+                <div class="search-types-container search-filter">
+                    <h5>Item Type</h5>
+                    @foreach (string type in Menu.MenuItemTypes)
+                    {
+                        <label>
+                            <input type="checkbox" name="MenuItemTypes" value="@type" checked="@Model.MenuItemTypes.Contains(type)" />
+                            @type
+                        </label>
+                    }
+                </div>
+                <div class="search-prices-container search-filter">
+                    <h5>Price</h5>
+                    <div>
+                        Between
+                        <input name="PriceMin" type="number" min="0" step="0.25" placeholder="min" value="@Model.PriceMin" class="number-input"/>
+                        and
+                        <input name="PriceMax" type="number" min="0" step="0.25" placeholder="max" value="@Model.PriceMax" class="number-input" />
+                    </div>
+                </div>
+                <div class="search-calories-container search-filter">
+                    <h5>Calories</h5>
+                        <div>
+                            Between
+                            <input name="CaloriesMin" type="number" min="0" step="10" placeholder="min" value="@Model.CaloriesMin" class="number-input" />
+                            and
+                            <input name="CaloriesMax" type="number" min="0" step="10" placeholder="max" value="@Model.CaloriesMax" class="number-input" />
+                        </div>
+                </div>
+            </div>
+            <!--End Search Criteria-->
+        </div>
+        
+
+        <!--Search Results-->
+        <div class="text-center" id="results">
+            <!--Entrees-->
+            <div class="scroll-helper menu-itemcategory-container" id="entrees">
+                @if(Model.MenuItems.ContainsKey("Entrees")) {
+                    <h2 class="menu-itemcategory-title">Entrees</h2>
+                    <hr width="100%" class="horizontal-line" />
+                    <div class="menu-itemcategory-container">
+                        @foreach (DinoMenuItem item in Model.MenuItems.GetValueOrDefault("Entrees"))
+                        {
+                            <div class="menu-item-container" id="primary">
+                                <div class="menu-item-name">
+                                    @item.Name
+                                </div>
+                                <hr class="horizontal-line">
+                                <div class="menu-item-info">
+                                    $@item.Price
+                                </div>
+                                <div class="menu-item-info">
+                                    Calories: @item.Calories
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+            <!--Sides-->
+            <div class="scroll-helper menu-itemcategory-container" id="sides">
+                @if (Model.MenuItems.ContainsKey("Sides"))
+                {
+                    <h2 class="menu-itemcategory-title">Sides</h2>
+                    <hr width="100%" class="horizontal-line" />
+                    <div class="menu-itemcategory-container">
+                        @foreach (DinoMenuItem item in Model.MenuItems.GetValueOrDefault("Sides"))
+                        {
+                            <div class="menu-item-container" id="primary">
+                                <div class="menu-item-name">
+                                    @item.Name
+                                </div>
+                                <hr class="horizontal-line">
+                                <div class="menu-item-info">
+                                    $@item.Price
+                                </div>
+                                <div class="menu-item-info">
+                                    Calories: @item.Calories
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+            <!--Drinks-->
+            <div class="scroll-helper menu-itemcategory-container" id="drinks">
+                @if (Model.MenuItems.ContainsKey("Drinks"))
+                {
+                    <h2 class="menu-itemcategory-title">Drinks</h2>
+                    <hr width="100%" class="horizontal-line" />
+                    <div class="menu-itemcategory-container">
+                        @foreach (DinoMenuItem item in Model.MenuItems.GetValueOrDefault("Drinks"))
+                        {
+                            <div class="menu-item-container" id="primary">
+                                <div class="menu-item-name">
+                                    @item.Name
+                                </div>
+                                <hr class="horizontal-line">
+                                <div class="menu-item-info">
+                                    $@item.Price
+                                </div>
+                                <div class="menu-item-info">
+                                    Calories: @item.Calories
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <!--Soda Flavors-->
+                    <div class="menu-item-container" id="secondary">
+                        <div>Soda Flavors</div>
+                        <hr class="horizontal-line" />
+                        @foreach (SodaFlavor flavor in Enum.GetValues(typeof(SodaFlavor)))
+                        {
+                            string flavorEnum = flavor.ToString();
+                            StringBuilder flavorText = new();
+                            flavorText.Append(flavorEnum[0]);
+                            for (int i = 1; i < flavorEnum.Length; i++)
+                            {
+                                if (Char.IsUpper(flavorEnum[i]))
+                                {
+                                    flavorText.Append(" ");
+                                }
+                                flavorText.Append(flavorEnum[i]);
+                            }
+                            <div class="sodaflavor">
+                                @flavorText.ToString()
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="DinoDiner.PointOfSale.OrderSummaryTotalControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DinoDiner.PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="72" d:DesignWidth="270">
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold">Subtotal</Label>
+        <TextBlock Name="Subtotal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=Subtotal, StringFormat=' {0:C2}'}" Margin="0 0 4 0" VerticalAlignment="Center"></TextBlock>
+
+        <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold">Tax</Label>
+        <TextBlock Name="Tax" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=Tax, StringFormat=' {0:C2}'}" Margin="0 0 4 0" VerticalAlignment="Center"></TextBlock>
+
+        <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" FontWeight="Bold">Total</Label>
+        <TextBlock Name="Total" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=Total, StringFormat=' {0:C2}'}" Margin="0 0 4 0" VerticalAlignment="Center"></TextBlock>
+    </Grid>
+</UserControl>

@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="DinoDiner.PointOfSale.MenuItemSelectionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DinoDiner.PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="648" d:DesignWidth="810">
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Bottom"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Name="MenuGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            
+
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Viewbox Grid.Row ="0" Grid.Column="0">
+            <Label >Burgers</Label>
+        </Viewbox>
+        <Button Name="AllosaurusAllAmericanButton" Grid.Row ="1" Grid.Column="0" Grid.RowSpan="5">Allosaurus All-American</Button>
+        <Button Name="CarnotaurusCheeseburgerButton" Grid.Row ="6" Grid.Column="0" Grid.RowSpan="5">Carnotaurus Cheeseburger</Button>
+        <Button Name="DeinonychusDoubleButton" Grid.Row ="11" Grid.Column="0" Grid.RowSpan="5">Deinonychus Double</Button>
+        <Button Name="TRexTripleButton" Grid.Row ="16" Grid.Column="0" Grid.RowSpan="5">T-Rex Triple Burger</Button>
+
+
+        <Viewbox Grid.Row ="0" Grid.Column="1">
+            <Label >Other Entrees</Label>
+        </Viewbox>
+        <Button Name="BrontowurstButton" Grid.Row ="1" Grid.Column="1" Grid.RowSpan="4">Brontowurst</Button>
+        <Button Name="DinoNuggetsButton" Grid.Row ="5" Grid.Column="1" Grid.RowSpan="4">Dino Nuggets</Button>
+        <Button Name="PrehistoricPBJButton" Grid.Row ="9" Grid.Column="1" Grid.RowSpan="4">Prehistoric PBJ</Button>
+        <Button Name="PterodactylWingsButton" Grid.Row ="13" Grid.Column="1" Grid.RowSpan="4">Pterodactyl Wings</Button>
+        <Button Name="VelociWraptorButton" Grid.Row ="17" Grid.Column="1" Grid.RowSpan="4">Veloci-Wraptor</Button>
+
+        <Viewbox Grid.Row ="0" Grid.Column="2">
+            <Label >Sides</Label>
+        </Viewbox>
+        <Button Name="FryceritopsButton" Grid.Row ="1" Grid.Column="2" Grid.RowSpan="5">Fryceritops</Button>
+        <Button Name="MeteorMacAndCheeseButton" Grid.Row ="6" Grid.Column="2" Grid.RowSpan="5">Meteor Mac &amp; Cheese</Button>
+        <Button Name="MezzorellaSticksButton" Grid.Row ="11" Grid.Column="2" Grid.RowSpan="5">Mezzorella Sticks</Button>
+        <Button Name="TriceritotsButton" Grid.Row ="16" Grid.Column="2" Grid.RowSpan="5">Triceritots</Button>
+
+        <Viewbox Grid.Row ="21" Grid.Column="0">
+            <Label>Drinks</Label>
+        </Viewbox>
+        <Button Name="PlilosodaButton" Grid.Row ="22" Grid.Column="0">Plilosoda</Button>
+        <Button Name="CretaceousCoffeeButton" Grid.Row ="22" Grid.Column="1">Cretaceous Coffee</Button>
+    </Grid>
+</UserControl>

@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="DinoDiner.PointOfSale.MenuControls.BurgerSauceControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DinoDiner.PointOfSale.MenuControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Viewbox">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Viewbox Grid.Column="0">
+            <CheckBox Name="KetchupCheckBox" IsChecked="{Binding Path=Ketchup}" >Ketchup</CheckBox>
+        </Viewbox>
+        <Viewbox Grid.Column="1">
+            <CheckBox Name="MustardCheckBox" IsChecked="{Binding Path=Mustard}">Mustard</CheckBox>
+        </Viewbox>
+        <Viewbox Grid.Column="2">
+            <CheckBox Name="BBQCheckBox" IsChecked="{Binding Path=BBQ}" >BBQ</CheckBox>
+        </Viewbox>
+        <Viewbox Grid.Column="3">
+            <CheckBox Name="MayoCheckBox" IsChecked="{Binding Path=Mayo}">Mayo</CheckBox>
+        </Viewbox>
+    </Grid>
+</UserControl>

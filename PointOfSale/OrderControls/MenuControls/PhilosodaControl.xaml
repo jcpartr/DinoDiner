@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="DinoDiner.PointOfSale.MenuControls.PhilosodaControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DinoDiner.PointOfSale.MenuControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="648" d:DesignWidth="810">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Viewbox HorizontalAlignment="Center" Grid.ColumnSpan="2">
+            <ContentControl FontWeight="Bold">Plilosoda</ContentControl>
+        </Viewbox>
+        <local:SodaFlavorControl Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center"></local:SodaFlavorControl>
+        <local:ServingSizeControl Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"></local:ServingSizeControl>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Bottom" >
+            <TextBlock FontSize="25" Margin="0 0 10 0">Calories:</TextBlock>
+            <TextBlock Name="CaloriesTextBox" FontSize="25" Text="{Binding Path=Calories}"/>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

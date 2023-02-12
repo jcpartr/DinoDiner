@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="DinoDiner.PointOfSale.MenuControls.DinoNuggetsCountControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DinoDiner.PointOfSale.MenuControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="810">
+    <Grid Margin="8 8 8 8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Viewbox Grid.ColumnSpan="2">
+            <Label>Count</Label>
+
+        </Viewbox>
+        <Border BorderThickness="1" BorderBrush="Gray" Grid.Row="1" Grid.ColumnSpan="2">
+            <Viewbox>
+                <TextBlock Name="Count" HorizontalAlignment="Center" Text="{Binding Path=Count}"/>
+            </Viewbox>
+        </Border>
+        <Button Name="IncreaseCountButton" Grid.Column="0" Grid.Row="2">
+            <Viewbox>
+                <TextBlock>+</TextBlock>
+            </Viewbox>
+        </Button>
+        <Button Name="DecreaseCountbutton" Grid.Column="1" Grid.Row="2">
+            <Viewbox>
+                <TextBlock>-</TextBlock>
+            </Viewbox>
+        </Button>
+        
+
+            
+
+    </Grid>
+
+</UserControl>

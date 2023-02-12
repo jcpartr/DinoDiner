@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="DinoDiner.PointOfSale.MenuControls.BurgerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DinoDiner.PointOfSale.MenuControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="648" d:DesignWidth="810">
+    <Grid Name="BurgerGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Name="BurgerLabel" HorizontalAlignment="Center" Grid.ColumnSpan="4" FontSize="40" FontWeight="Bold" Text="{Binding Path=Name}"></TextBlock>
+
+        <local:BurgerPattiesControl Grid.Row="1" x:Name="PattiesControl"></local:BurgerPattiesControl>
+
+        <Label Name="SauceLabel" Grid.Row="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" FontSize="40">Sauce</Label>
+        <local:BurgerSauceControl Grid.Row="3" x:Name="SauceControl"></local:BurgerSauceControl>
+
+        <Label Name="CheeseLabel" Grid.Row="4" Grid.ColumnSpan="4" HorizontalAlignment="Center" FontSize="40">Cheese</Label>
+        <local:BurgerCheeseControl Grid.Row="5" x:Name="CheeseControl"></local:BurgerCheeseControl>
+
+        <Label Name="ToppingLabel" Grid.Row="6" Grid.ColumnSpan="4" HorizontalAlignment="Center" FontSize="40">Toppings</Label>
+        <local:BurgerToppingsControl Grid.Row="7" x:Name="ToppingsControl"></local:BurgerToppingsControl>
+
+
+        <StackPanel Grid.Row="8" Orientation="Horizontal" VerticalAlignment="Bottom">
+            <TextBlock FontSize="25" Margin="0 0 10 0">Calories:</TextBlock>
+            <TextBlock Name="CaloriesTextBox" FontSize="25" Text="{Binding Path=Calories}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
